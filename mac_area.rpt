@@ -1,0 +1,33 @@
+ 
+****************************************
+Report : area
+Design : mac
+Version: V-2023.12-SP4
+Date   : Tue Apr 14 12:55:56 2026
+****************************************
+
+Library(s) Used:
+
+    saed14rvt_base_ff0p715v125c (File: /home/synopsys/installs/LIBRARIES/SAED14_EDK/SAED14nm_EDK_STD_RVT/liberty/nldm/base/saed14rvt_base_ff0p715v125c.db)
+    saed14rvt_ulvl_ff0p88v125c_i0p715v (File: /home/synopsys/installs/LIBRARIES/SAED14_EDK/SAED14nm_EDK_STD_RVT/liberty/nldm/ulvl/saed14rvt_ulvl_ff0p88v125c_i0p715v.db)
+    saed14rvt_dlvl_ff0p715v125c_i0p88v (File: /home/synopsys/installs/LIBRARIES/SAED14_EDK/SAED14nm_EDK_STD_RVT/liberty/nldm/dlvl/saed14rvt_dlvl_ff0p715v125c_i0p88v.db)
+    saed14rvt_base_ff0p88v125c (File: /home/synopsys/installs/LIBRARIES/SAED14_EDK/SAED14nm_EDK_STD_RVT/liberty/nldm/base/saed14rvt_base_ff0p88v125c.db)
+
+Number of ports:                          171
+Number of nets:                           775
+Number of cells:                          604
+Number of combinational cells:            522
+Number of sequential cells:                80
+Number of macros/black boxes:               0
+Number of buf/inv:                        136
+Number of references:                      12
+
+Combinational area:                471.172792
+Buf/Inv area:                       25.352400
+Noncombinational area:              85.248003
+Macro/Black Box area:                0.000000
+Net Interconnect area:             371.365854
+
+Total cell area:                   556.420795
+Total area:                        927.786648
+1

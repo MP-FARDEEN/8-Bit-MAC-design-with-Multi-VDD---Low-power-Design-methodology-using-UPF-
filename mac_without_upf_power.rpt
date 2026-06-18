@@ -1,0 +1,62 @@
+Loading db file '/home/synopsys/installs/LIBRARIES/SAED14_EDK/SAED14nm_EDK_STD_RVT/liberty/nldm/base/saed14rvt_base_ff0p715v125c.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : mac
+Version: V-2023.12-SP4
+Date   : Sun Apr 12 11:55:34 2026
+****************************************
+
+
+Library(s) Used:
+
+    saed14rvt_base_ff0p715v125c (File: /home/synopsys/installs/LIBRARIES/SAED14_EDK/SAED14nm_EDK_STD_RVT/liberty/nldm/base/saed14rvt_base_ff0p715v125c.db)
+
+
+Operating Conditions: ff0p715v125c   Library: saed14rvt_base_ff0p715v125c
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+mac                    8000              saed14rvt_base_ff0p715v125c
+
+
+Global Operating Voltage = 0.715
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+Attributes
+----------
+i - Including register clock pin internal power
+
+
+  Cell Internal Power  =  61.5274 uW   (62%)
+  Net Switching Power  =  37.5706 uW   (38%)
+                         ---------
+Total Dynamic Power    =  99.0980 uW  (100%)
+
+Cell Leakage Power     =   8.3884 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network  5.3216e-02            0.0000            0.0000        5.3216e-02  (  49.52%)  i
+register       1.1264e-03        3.1748e-03        2.4130e+06        6.7141e-03  (   6.25%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  7.1853e-03        3.4396e-02        5.9546e+06        4.7536e-02  (  44.23%)
+--------------------------------------------------------------------------------------------------
+Total          6.1527e-02 mW     3.7571e-02 mW     8.3676e+06 pW         0.1075 mW
+1

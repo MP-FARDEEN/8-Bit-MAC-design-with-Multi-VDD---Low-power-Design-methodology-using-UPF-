@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : mac
+Version: V-2023.12-SP4
+Date   : Sun Apr 12 11:55:30 2026
+****************************************
+
+Library(s) Used:
+
+    saed14rvt_base_ff0p715v125c (File: /home/synopsys/installs/LIBRARIES/SAED14_EDK/SAED14nm_EDK_STD_RVT/liberty/nldm/base/saed14rvt_base_ff0p715v125c.db)
+
+Number of ports:                          346
+Number of nets:                           811
+Number of cells:                          439
+Number of combinational cells:            354
+Number of sequential cells:                80
+Number of macros/black boxes:               0
+Number of buf/inv:                         69
+Number of references:                       7
+
+Combinational area:                174.358798
+Buf/Inv area:                       16.028400
+Noncombinational area:              85.248003
+Macro/Black Box area:                0.000000
+Net Interconnect area:             262.998729
+
+Total cell area:                   259.606801
+Total area:                        522.605529
+1

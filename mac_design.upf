@@ -1,0 +1,89 @@
+# -------------------------------
+# 1. Supply Nets
+# -------------------------------
+create_supply_net VDD1
+create_supply_net VDD2
+create_supply_net VSS
+
+# -------------------------------
+# 2. Supply Ports
+# -------------------------------
+create_supply_port VDD1 -direction in
+create_supply_port VDD2 -direction in
+create_supply_port VSS  -direction in
+
+# -------------------------------
+# 3. Connect Supply Nets
+# -------------------------------
+connect_supply_net VDD1 -ports VDD1
+connect_supply_net VDD2 -ports VDD2
+connect_supply_net VSS  -ports VSS
+
+# -------------------------------
+# 4. Supply Sets
+# -------------------------------
+create_supply_set SS_LOW \
+    -function {power VDD1} \
+    -function {ground VSS}
+
+create_supply_set SS_HIGH \
+    -function {power VDD2} \
+    -function {ground VSS}
+
+# -------------------------------
+# 5. Power Domains
+# -------------------------------
+create_power_domain PD_TOP \
+    -include_scope \
+    -supply {primary SS_LOW}
+
+create_power_domain PD_1 \
+    -elements {u_mul} \
+    -supply {primary SS_HIGH}
+
+create_power_domain PD_2 \
+    -elements {u_add} \
+    -supply {primary SS_HIGH}
+
+# -------------------------------
+# 6. Port States (keep this)
+# -------------------------------
+add_port_state VDD1 -state {LOW  0.715}
+add_port_state VDD2 -state {HIGH 0.88}
+add_port_state VSS  -state {GROUND 0.0}
+# -------------------------------
+# 7. Power State Table
+# -------------------------------
+create_pst MAC_PST \
+    -supplies {VDD1 VDD2 VSS}
+
+add_pst_state ALL_ON \
+    -pst   MAC_PST \
+    -state {LOW HIGH GROUND}
+
+# -------------------------------
+# 8. Level Shifters
+# -------------------------------
+set_level_shifter LS_LOW_TO_MUL \
+    -domain     PD_1 \
+    -applies_to inputs \
+    -rule       low_to_high \
+    -location   self
+
+set_level_shifter LS_LOW_TO_ADD \
+    -domain     PD_2 \
+    -applies_to inputs \
+    -rule       low_to_high \
+    -location   self
+
+set_level_shifter LS_MUL_TO_TOP \
+    -domain     PD_1 \
+    -applies_to outputs \
+    -rule       high_to_low \
+    -location   parent
+
+set_level_shifter LS_ADD_TO_TOP \
+    -domain     PD_2 \
+    -applies_to outputs \
+    -rule       high_to_low \
+    -location   parent
